@@ -1,0 +1,106 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Management System</title>
+    <link rel="stylesheet" href="./UFD.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Update Teacher Details</h2>
+
+      <div class="search-select-group">
+        <label for="employee-id-select">Select Employee ID:</label>
+        <select id="employee-id-select">
+          <option value="">-- Select Employee ID --</option>
+          <!-- Employee IDs will be populated here by JS -->
+        </select>
+      </div>
+
+      <form id="update-teacher-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="father-name">Father's Name</label>
+            <input type="text" id="father-name" name="fatherName" required />
+          </div>
+          <div class="form-group">
+            <label for="employee-id">Employee ID</label>
+            <input type="text" id="employee-id" name="empId" readonly />
+            <!-- Employee ID is read-only -->
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="class-x">Class X (%)</label>
+            <input
+              type="text"
+              id="class-x"
+              name="classX"
+              placeholder="e.g., 85.50"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="class-xii">Class XII (%)</label>
+            <input
+              type="text"
+              id="class-xii"
+              name="classXII"
+              placeholder="e.g., 92.00"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="aadhar">Aadhar Number</label>
+            <input type="text" id="aadhar" name="aadhar" required />
+          </div>
+          <div class="form-group">
+            <label for="qualification">Qualification</label>
+            <select id="qualification" name="qualification" required>
+              <option value="">-- Select Qualification --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="department">Department</label>
+            <select id="department" name="department" required>
+              <option value="">-- Select Department --</option>
+            </select>
+          </div>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="update-button">Update</button>
+          <button
+            type="button"
+            class="cancel-button"
+            id="cancel-button"
+            onclick="window.location.href='../home/home.html'"
+          >
+            Cancel
+          </button>
+        </div>
+        <div id="message-display"></div>
+      </form>
+    </div>
+    <script src="./UFD.js"></script>
+  </body>
+</html>

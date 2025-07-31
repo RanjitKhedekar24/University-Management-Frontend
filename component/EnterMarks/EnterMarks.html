@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Management System</title>
+    <link rel="stylesheet" href="./EnterMarks.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Enter Marks of Student</h2>
+
+      <div class="form-content">
+        <div class="form-section">
+          <form id="enter-marks-form">
+            <div class="form-group">
+              <label for="roll-number">Roll Number</label>
+              <select id="roll-number" name="rollNumber" required>
+                <option value="">-- Select Roll Number --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="semester">Semester</label>
+              <select id="semester" name="semester">
+                <option value="">-- semester --</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="course">Course</label>
+              <select id="course" name="course" required>
+                <option value="">-- Select Course --</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="branch">branch</label>
+              <select id="branch" name="branch" required>
+                <option value="">-- Select branch --</option>
+              </select>
+            </div>
+
+            <div id="marks-container"></div>
+
+            <div class="button-group">
+              <button type="submit" class="submit-button">Submit</button>
+              <button
+                type="button"
+                onclick="window.location.href='../home/home.html'"
+                class="back-button"
+                id="back-button"
+              >
+                Back
+              </button>
+            </div>
+            <div id="message-display"></div>
+          </form>
+        </div>
+
+        <div class="image-section">
+          <img src="../../assets/Exam.png" alt="Exam related image" />
+        </div>
+      </div>
+    </div>
+    <script src="./EnterMarks.js"></script>
+  </body>
+</html>

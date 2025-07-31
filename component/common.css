@@ -1,0 +1,41 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #e0f2f7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-image: url("../../assets/first.jpg"); /* Use your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+/* Glassmorphism card with blur effect */
+.container {
+  background: rgba(255, 255, 255, 0.13); /* Very transparent for glass effect */
+  padding: 2.5rem 3.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(14px); /* Strong blur for card */
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+}

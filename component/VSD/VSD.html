@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Management System</title>
+    <link rel="stylesheet" href="./VSD.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Student Details</h2>
+
+      <div class="search-section">
+        <label for="search-roll-number">Search Student by Roll Number</label>
+        <input
+          type="text"
+          id="search-roll-number"
+          placeholder="Enter Roll Number"
+        />
+        <select id="roll-number-select">
+          <option value="">-- Select Roll No. --</option>
+          <!-- Roll Numbers will be populated here by JS -->
+        </select>
+        <button id="search-btn" class="action-buttons search-btn">
+          Search
+        </button>
+      </div>
+
+      <div class="action-buttons">
+        <button id="print-btn" class="print-btn">Print</button>
+        <button
+          id="add-btn"
+          onclick="window.location.href='NSI.html'"
+          class="add-btn"
+        >
+          Add
+        </button>
+        <button id="update-btn" class="update-btn">Update</button>
+        <button
+          id="cancel-btn"
+          onclick="window.location.href='../home/home.html'"
+          class="cancel-btn"
+        >
+          Cancel
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table id="student-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Father's Name</th>
+              <th>Roll No.</th>
+              <th>DOB</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Class X (%)</th>
+              <th>Class XII (%)</th>
+              <th>Aadhar</th>
+              <th>Course</th>
+              <th>Branch</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div id="message-display"></div>
+    </div>
+    <script src="./VSD.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </body>
+</html>

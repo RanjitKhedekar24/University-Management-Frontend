@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Management System</title>
+    <link rel="stylesheet" href="./FLeave.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>
+        <input type="checkbox" id="apply-leave-checkbox" checked disabled />
+        Apply Leave (Teacher)
+      </h2>
+      <form id="apply-leave-form">
+        <div class="form-group">
+          <label for="employee-id">Employee ID:</label>
+          <select id="employee-id" name="employeeId" required>
+            <option value="">-- Select Employee ID --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="leave-date">Date:</label>
+          <input type="date" id="leave-date" name="leaveDate" required />
+        </div>
+        <div class="form-group">
+          <label for="time-duration">Time Duration:</label>
+          <select id="time-duration" name="timeDuration" required>
+            <option value="Full Day">Full Day</option>
+            <option value="Half Day (Morning)">Half Day (Morning)</option>
+            <option value="Half Day (Afternoon)">Half Day (Afternoon)</option>
+          </select>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="submit-button">Submit</button>
+          <button
+            type="button"
+            class="cancel-button"
+            onclick="window.location.href='../home/home.html'"
+            id="cancel-button"
+          >
+            Cancel
+          </button>
+        </div>
+        <div id="message-display"></div>
+      </form>
+    </div>
+    <script src="./FLeave.js"></script>
+  </body>
+</html>

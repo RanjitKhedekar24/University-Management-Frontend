@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="floating"></div>
+    <div class="floating"></div>
+    <div class="floating"></div>
+    <div class="floating"></div>
+
+    <div class="login-container">
+      <div class="logo-container">
+        <div class="logo-circle">
+          <i class="logo-icon">U</i>
+        </div>
+        <h2>University Portal</h2>
+        <p>Access your academic information securely</p>
+      </div>
+     <div id="message-display"></div>
+      <form id="login-form">
+        <div class="input-group">
+          <div class="input-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="login-button">Log In</button>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Fee Payment</title>
+    <link rel="stylesheet" href="./SFF.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Student Fee Payment</h2>
+
+      <div class="form-content">
+        <div class="form-section">
+          <form id="fee-payment-form">
+            <div class="form-group">
+              <label for="roll-number-select">Select Roll No:</label>
+              <select id="roll-number-select" name="rollNumber" required>
+                <option value="">-- Select Roll No --</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Name:</label>
+              <span class="display-value" id="student-name"></span>
+            </div>
+
+            <div class="form-group">
+              <label>Father's Name:</label>
+              <span class="display-value" id="father-name"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="course">Course:</label>
+              <select id="course" name="course" required>
+                <option value="B.Tech">B.Tech</option>
+              <option value="M.Tech">M.Tech</option>
+              <option value="B.Sc.">B.Sc.</option>
+              <option value="M.Sc.">M.Sc.</option>
+              <option value="B.A.">B.A.</option>
+              <option value="M.A.">M.A.</option>
+              </select>
+            </div>
+<!-- 
+            <div class="form-group">
+              <label for="branch">Branch:</label>
+              <select id="branch" name="branch" required>
+                <option value="">-- Select Branch --</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Electrical Engineering">
+                  Electrical Engineering
+                </option>
+                <option value="Mechanical Engineering">
+                  Mechanical Engineering
+                </option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Electronics Engineering">
+                  Electronics Engineering
+                </option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="History">History</option>
+                <option value="Literature">Literature</option>
+              </select>
+            </div> -->
+
+            <div class="form-group">
+              <label for="branch">Branch:</label>
+              <select id="branch" name="branch" required>
+                <option value="">-- Select Branch --</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="semester">Semester:</label>
+              <select id="semester" name="semester" required>
+                <option value="">-- Select Semester --</option>
+                <option value="semester1">Semester 1</option>
+                <option value="semester2">Semester 2</option>
+                <option value="semester3">Semester 3</option>
+                <option value="semester4">Semester 4</option>
+                <option value="semester5">Semester 5</option>
+                <option value="semester6">Semester 6</option>
+                <option value="semester7">Semester 7</option>
+                <option value="semester8">Semester 8</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Total Payable:</label>
+              <span class="display-value" id="total-payable">0</span>
+            </div>
+
+            <div class="button-group">
+              <button type="button" class="update-button" id="update-button">
+                Update
+              </button>
+              <button type="submit" class="pay-fee-button">Pay Fee</button>
+              <button
+                type="button"
+                onclick="window.location.href='../home/home.html'"
+                class="back-button"
+                id="back-button"
+              >
+                Back
+              </button>
+            </div>
+            <div id="message-display"></div>
+          </form>
+        </div>
+
+        <div class="image-section">
+          <img src="../../assets/fees.png" alt="Education Fund" />
+        </div>
+      </div>
+    </div>
+    <script src="./SFF.js"></script>
+  </body>
+</html>

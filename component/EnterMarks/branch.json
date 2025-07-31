@@ -1,0 +1,633 @@
+{
+  "subjectsByBranchAndSemester": {
+    "Computer Science (B.Tech)": {
+      "1": [
+        "Mathematics I",
+        "C Programming",
+        "Physics",
+        "Engineering Graphics",
+        "English"
+      ],
+      "2": [
+        "Mathematics II",
+        "Data Structures",
+        "Digital Logic",
+        "OOPs",
+        "Environmental Studies"
+      ],
+      "3": [
+        "Algorithms",
+        "Database",
+        "Operating Systems",
+        "Discrete Maths",
+        "Computer Networks"
+      ],
+      "4": [
+        "Software Engineering",
+        "AI",
+        "Compiler Design",
+        "Web Tech",
+        "Mini Project"
+      ],
+      "5": [
+        "Machine Learning",
+        "Mobile Computing",
+        "Cloud",
+        "IoT",
+        "Research Methodology"
+      ],
+      "6": ["Big Data", "NLP", "Cyber Security", "Seminar", "Major Project"],
+      "7": [
+        "Internship I",
+        "Advanced Topics I",
+        "Elective I",
+        "Elective II",
+        "Capstone I"
+      ],
+      "8": ["Internship II", "Capstone II", "Elective III", "Viva", "Thesis"]
+    },
+    "Electrical Engineering (B.Tech)": {
+      "1": [
+        "Mathematics I",
+        "Basic Electrical",
+        "Physics",
+        "Engineering Drawing",
+        "English"
+      ],
+      "2": [
+        "Mathematics II",
+        "Circuit Theory",
+        "Electromagnetics",
+        "Electronics",
+        "Workshop"
+      ],
+      "3": [
+        "Machines I",
+        "Signals & Systems",
+        "Digital Systems",
+        "Instrumentation",
+        "Lab I"
+      ],
+      "4": [
+        "Machines II",
+        "Control Systems",
+        "Power Systems",
+        "Measurements",
+        "Lab II"
+      ],
+      "5": [
+        "Power Electronics",
+        "Energy Systems",
+        "Microprocessors",
+        "Mini Project",
+        "Seminar"
+      ],
+      "6": ["Smart Grid", "HVDC", "Advanced Drives", "Major Project", "Viva"],
+      "7": [
+        "Internship I",
+        "Elective I",
+        "Capstone I",
+        "Research",
+        "Presentation"
+      ],
+      "8": ["Internship II", "Capstone II", "Thesis", "Defense", "Publication"]
+    },
+    "Mechanical Engineering (B.Tech)": {
+      "1": [
+        "Mathematics I",
+        "Engineering Mechanics",
+        "Physics",
+        "Graphics",
+        "English"
+      ],
+      "2": [
+        "Mathematics II",
+        "Thermodynamics",
+        "Fluid Mechanics",
+        "Workshop",
+        "CAD"
+      ],
+      "3": [
+        "Material Science",
+        "Kinematics",
+        "Manufacturing Process",
+        "Lab I",
+        "Numerical Methods"
+      ],
+      "4": [
+        "Heat Transfer",
+        "Machine Design",
+        "Dynamics",
+        "Lab II",
+        "Control Engineering"
+      ],
+      "5": ["IC Engines", "Robotics", "CAD/CAM", "Mini Project", "Seminar"],
+      "6": ["Automobile Engg", "Vibration", "HVAC", "Major Project", "Viva"],
+      "7": [
+        "Internship I",
+        "Elective I",
+        "Capstone I",
+        "Industrial Training",
+        "Report"
+      ],
+      "8": ["Internship II", "Capstone II", "Thesis", "Review", "Defense"]
+    },
+    "Civil Engineering (B.Tech)": {
+      "1": [
+        "Mathematics I",
+        "Basic Civil Engg",
+        "Physics",
+        "Engineering Drawing",
+        "English"
+      ],
+      "2": [
+        "Mathematics II",
+        "Surveying",
+        "Geology",
+        "Construction Materials",
+        "Workshop"
+      ],
+      "3": [
+        "Structural Analysis I",
+        "Concrete Tech",
+        "Hydraulics",
+        "Lab I",
+        "Environmental Engg"
+      ],
+      "4": [
+        "Structural Analysis II",
+        "Steel Design",
+        "Geotechnical Engg",
+        "Transportation",
+        "Lab II"
+      ],
+      "5": [
+        "Foundation Engg",
+        "Construction Planning",
+        "Estimation",
+        "Mini Project",
+        "Seminar"
+      ],
+      "6": [
+        "Irrigation",
+        "Bridge Engg",
+        "Advanced Geotech",
+        "Major Project",
+        "Viva"
+      ],
+      "7": ["Internship I", "Capstone I", "Elective I", "Report", "Review"],
+      "8": ["Internship II", "Capstone II", "Thesis", "Defense", "Publication"]
+    },
+    "Electronics Engineering (B.Tech)": {
+      "1": [
+        "Mathematics I",
+        "Electronics I",
+        "Physics",
+        "English",
+        "Engineering Drawing"
+      ],
+      "2": [
+        "Mathematics II",
+        "Analog Circuits",
+        "Digital Logic",
+        "Signals",
+        "Workshop"
+      ],
+      "3": [
+        "Communication Systems",
+        "Microprocessors",
+        "Network Theory",
+        "Lab I",
+        "Embedded Systems"
+      ],
+      "4": [
+        "VLSI",
+        "Microwave Engg",
+        "Instrumentation",
+        "Lab II",
+        "Mini Project"
+      ],
+      "5": ["DSP", "Wireless Comm", "IoT", "Seminar", "Elective I"],
+      "6": [
+        "Optical Comm",
+        "Advanced VLSI",
+        "Major Project",
+        "Viva",
+        "Elective II"
+      ],
+      "7": ["Internship I", "Capstone I", "Elective III", "Report", "Review"],
+      "8": ["Internship II", "Capstone II", "Thesis", "Defense", "Viva"]
+    },
+
+    "Computer Science (M.Tech)": {
+      "1": [
+        "Advanced Algorithms",
+        "Advanced OS",
+        "Research Methodology",
+        "Distributed Systems",
+        "Lab"
+      ],
+      "2": [
+        "Machine Learning",
+        "Cloud Computing",
+        "Big Data",
+        "Elective I",
+        "Seminar"
+      ],
+      "3": [
+        "Thesis Work I",
+        "Elective II",
+        "Project Management",
+        "Publication Work",
+        "Internship"
+      ],
+      "4": [
+        "Thesis Work II",
+        "Viva",
+        "Capstone Presentation",
+        "Review Paper",
+        "Defense"
+      ]
+    },
+    "Electrical Engineering (M.Tech)": {
+      "1": [
+        "Power Systems",
+        "Control Systems",
+        "Power Electronics",
+        "Research Methods",
+        "Lab I"
+      ],
+      "2": [
+        "Smart Grids",
+        "HVDC",
+        "Electrical Drives",
+        "Elective I",
+        "Seminar"
+      ],
+      "3": [
+        "Thesis Proposal",
+        "Elective II",
+        "Industrial Applications",
+        "Mini Project",
+        "Internship"
+      ],
+      "4": ["Major Project", "Defense", "Viva", "Capstone", "Publication"]
+    },
+    "Mechanical Engineering (M.Tech)": {
+      "1": [
+        "Advanced Thermodynamics",
+        "Finite Element Analysis",
+        "Research Methodology",
+        "Dynamics",
+        "Lab I"
+      ],
+      "2": [
+        "Robotics",
+        "Heat & Mass Transfer",
+        "CAD/CAM",
+        "Elective I",
+        "Seminar"
+      ],
+      "3": [
+        "Project Work I",
+        "Elective II",
+        "Vibrations",
+        "Industrial Training",
+        "Capstone Prep"
+      ],
+      "4": ["Thesis Work", "Defense", "Viva", "Final Report", "Presentation"]
+    },
+    "Civil Engineering (M.Tech)": {
+      "1": [
+        "Advanced Structural Analysis",
+        "Foundation Engg",
+        "Research Methodology",
+        "Concrete Design",
+        "Lab I"
+      ],
+      "2": [
+        "Transportation Engg",
+        "Bridge Design",
+        "Hydrology",
+        "Elective I",
+        "Seminar"
+      ],
+      "3": [
+        "Thesis Planning",
+        "Elective II",
+        "Mini Project",
+        "Capstone I",
+        "Internship"
+      ],
+      "4": ["Thesis II", "Defense", "Presentation", "Viva", "Publication"]
+    },
+    "Electronics Engineering (M.Tech)": {
+      "1": [
+        "Advanced VLSI",
+        "Digital Signal Processing",
+        "Analog IC Design",
+        "Research Methods",
+        "Lab I"
+      ],
+      "2": [
+        "Embedded Systems",
+        "Wireless Comm",
+        "EDA Tools",
+        "Elective I",
+        "Seminar"
+      ],
+      "3": [
+        "Project Phase I",
+        "Elective II",
+        "Low Power Design",
+        "Capstone",
+        "Internship"
+      ],
+      "4": ["Final Project", "Defense", "Viva", "Presentation", "Review"]
+    },
+
+    "Computer Science (B.Sc.)": {
+      "1": [
+        "Programming Fundamentals",
+        "Mathematics I",
+        "Digital Logic",
+        "Computer Organization",
+        "English"
+      ],
+      "2": [
+        "Data Structures",
+        "Mathematics II",
+        "OOP using C++",
+        "Discrete Mathematics",
+        "Lab Work"
+      ],
+      "3": [
+        "Operating Systems",
+        "Database Management",
+        "Software Engineering",
+        "Computer Networks",
+        "Lab Work"
+      ],
+      "4": [
+        "Design & Analysis of Algorithms",
+        "Java Programming",
+        "Web Development",
+        "Theory of Computation",
+        "Mini Project"
+      ],
+      "5": [
+        "Artificial Intelligence",
+        "Mobile App Dev",
+        "Cyber Security",
+        "Cloud Computing",
+        "Seminar"
+      ],
+      "6": [
+        "Project Work",
+        "Big Data Analytics",
+        "Internship",
+        "Presentation",
+        "Viva"
+      ]
+    },
+    "Physics (B.Sc.)": {
+      "1": ["Mechanics", "Mathematics I", "Lab I", "Thermodynamics", "English"],
+      "2": ["Waves", "Optics", "Electrostatics", "Lab II", "Modern Physics"],
+      "3": [
+        "Quantum Mechanics",
+        "EM Theory",
+        "Thermal Physics",
+        "Lab III",
+        "Atomic Physics"
+      ],
+      "4": [
+        "Solid State",
+        "Electronics",
+        "Nuclear Physics",
+        "Lab IV",
+        "Project"
+      ],
+      "5": [
+        "Statistical Physics",
+        "Advanced Mechanics",
+        "Seminar",
+        "Elective",
+        "Research"
+      ],
+      "6": ["Capstone", "Advanced Lab", "Review", "Viva", "Internship"]
+    },
+    "Chemistry (B.Sc.)": {
+      "1": ["Inorganic I", "Organic I", "Physical I", "Lab I", "English"],
+      "2": [
+        "Inorganic II",
+        "Organic II",
+        "Physical II",
+        "Lab II",
+        "Analytical Chem"
+      ],
+      "3": [
+        "Coordination Chem",
+        "Spectroscopy",
+        "Lab III",
+        "Polymer Chem",
+        "Environmental Chem"
+      ],
+      "4": [
+        "Reaction Mechanisms",
+        "Electrochemistry",
+        "Lab IV",
+        "Project",
+        "Green Chem"
+      ],
+      "5": [
+        "Medicinal Chem",
+        "Research Techniques",
+        "Seminar",
+        "Elective",
+        "Viva"
+      ],
+      "6": ["Capstone", "Thesis", "Internship", "Defense", "Presentation"]
+    },
+
+    "Physics (M.Sc.)": {
+      "1": [
+        "Classical Mechanics",
+        "Quantum Mechanics",
+        "Mathematical Physics",
+        "Electrodynamics",
+        "Lab I"
+      ],
+      "2": [
+        "Statistical Physics",
+        "Solid State Physics",
+        "Atomic & Molecular Physics",
+        "Lab II",
+        "Seminar"
+      ],
+      "3": [
+        "Nuclear Physics",
+        "Computational Physics",
+        "Elective",
+        "Project Proposal",
+        "Internship"
+      ],
+      "4": ["Thesis", "Viva", "Defense", "Presentation", "Capstone"]
+    },
+    "Chemistry (M.Sc.)": {
+      "1": [
+        "Organic Chemistry",
+        "Inorganic Chemistry",
+        "Physical Chemistry",
+        "Spectroscopy",
+        "Lab I"
+      ],
+      "2": [
+        "Analytical Chemistry",
+        "Organometallics",
+        "Quantum Chemistry",
+        "Lab II",
+        "Seminar"
+      ],
+      "3": [
+        "Biochemistry",
+        "Environmental Chemistry",
+        "Elective",
+        "Project Work",
+        "Internship"
+      ],
+      "4": ["Thesis", "Viva", "Defense", "Presentation", "Capstone"]
+    },
+    "Computer Science (M.Sc.)": {
+      "1": [
+        "Advanced Programming",
+        "OS Concepts",
+        "Mathematical Foundations",
+        "Computer Architecture",
+        "Lab"
+      ],
+      "2": ["DBMS", "Data Mining", "Web Tech", "Research Methods", "Seminar"],
+      "3": [
+        "AI & ML",
+        "Image Processing",
+        "Elective",
+        "Mini Project",
+        "Internship"
+      ],
+      "4": ["Major Project", "Thesis", "Viva", "Capstone Review", "Defense"]
+    },
+
+    "History (B.A.)": {
+      "1": [
+        "Ancient India",
+        "World History I",
+        "Political History",
+        "Sources",
+        "English"
+      ],
+      "2": [
+        "Medieval India",
+        "World History II",
+        "Socio-economic",
+        "Lab",
+        "Research Methods"
+      ],
+      "3": [
+        "Modern India",
+        "Colonialism",
+        "Freedom Struggle",
+        "Lab",
+        "Seminar"
+      ],
+      "4": [
+        "Post-Independence",
+        "World Movements",
+        "Elective",
+        "Thesis",
+        "Presentation"
+      ],
+      "5": [
+        "Historiography",
+        "Cultural History",
+        "Seminar",
+        "Review",
+        "Internship"
+      ],
+      "6": ["Capstone", "Research Paper", "Defense", "Viva", "Final Project"]
+    },
+    "Literature (B.A.)": {
+      "1": ["Intro to Literature", "Poetry", "Drama", "Prose", "English Usage"],
+      "2": [
+        "Romantic Poetry",
+        "Shakespeare",
+        "American Lit",
+        "Literary Criticism",
+        "Lab"
+      ],
+      "3": [
+        "Modern Fiction",
+        "Postcolonial Lit",
+        "Indian Writings",
+        "Elective",
+        "Seminar"
+      ],
+      "4": ["Comparative Lit", "Theory", "Capstone", "Thesis", "Defense"],
+      "5": [
+        "Creative Writing",
+        "Editing",
+        "Publishing",
+        "Research",
+        "Internship"
+      ],
+      "6": ["Review", "Portfolio", "Presentation", "Viva", "Project"]
+    },
+
+    "History (M.A.)": {
+      "1": [
+        "Historical Methods",
+        "Indian Historiography",
+        "World History",
+        "Sources & Archives",
+        "Seminar"
+      ],
+      "2": [
+        "Modern Indian History",
+        "Colonial Systems",
+        "Elective I",
+        "Project I",
+        "Viva"
+      ],
+      "3": [
+        "Cultural History",
+        "Economic History",
+        "Elective II",
+        "Review",
+        "Internship"
+      ],
+      "4": ["Thesis", "Capstone", "Defense", "Viva", "Publication"]
+    },
+    "Literature (M.A.)": {
+      "1": [
+        "Literary Theory",
+        "Narrative Techniques",
+        "Advanced Poetry",
+        "Lab I",
+        "Seminar"
+      ],
+      "2": [
+        "Postmodern Lit",
+        "World Literature",
+        "Translation Studies",
+        "Lab II",
+        "Review"
+      ],
+      "3": [
+        "Contemporary Fiction",
+        "Elective I",
+        "Project Work",
+        "Internship",
+        "Defense"
+      ],
+      "4": ["Thesis", "Portfolio", "Presentation", "Viva", "Capstone"]
+    }
+  }
+}

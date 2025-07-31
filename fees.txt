@@ -1,0 +1,68 @@
+post:--http://localhost:3000/api/fees
+
+
+[
+  {
+    "course": "B.Tech",
+    "fees": [
+      { "semester": 1, "amount": 60000 },
+      { "semester": 2, "amount": 60000 },
+      { "semester": 3, "amount": 60000 },
+      { "semester": 4, "amount": 60000 },
+      { "semester": 5, "amount": 60000 },
+      { "semester": 6, "amount": 60000 },
+      { "semester": 7, "amount": 60000 },
+      { "semester": 8, "amount": 60000 }
+    ]
+  },
+  {
+    "course": "M.Tech",
+    "fees": [
+      { "semester": 1, "amount": 70000 },
+      { "semester": 2, "amount": 70000 },
+      { "semester": 3, "amount": 70000 },
+      { "semester": 4, "amount": 70000 }
+    ]
+  },
+  {
+    "course": "B.Sc.",
+    "fees": [
+      { "semester": 1, "amount": 40000 },
+      { "semester": 2, "amount": 40000 },
+      { "semester": 3, "amount": 40000 },
+      { "semester": 4, "amount": 40000 },
+      { "semester": 5, "amount": 40000 },
+      { "semester": 6, "amount": 40000 }
+    ]
+  },
+  {
+    "course": "M.Sc.",
+    "fees": [
+      { "semester": 1, "amount": 50000 },
+      { "semester": 2, "amount": 50000 },
+      { "semester": 3, "amount": 50000 },
+      { "semester": 4, "amount": 50000 }
+    ]
+  },
+  {
+    "course": "B.A.",
+    "fees": [
+      { "semester": 1, "amount": 30000 },
+      { "semester": 2, "amount": 30000 },
+      { "semester": 3, "amount": 30000 },
+      { "semester": 4, "amount": 30000 },
+      { "semester": 5, "amount": 30000 },
+      { "semester": 6, "amount": 30000 }
+    ]
+  },
+  {
+    "course": "M.A.",
+    "fees": [
+      { "semester": 1, "amount": 35000 },
+      { "semester": 2, "amount": 35000 },
+      { "semester": 3, "amount": 35000 },
+      { "semester": 4, "amount": 35000 }
+    ]
+  }
+]
+

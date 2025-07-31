@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Management System</title>
+    <link rel="stylesheet" href="./SLeave.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>
+        <input type="checkbox" id="apply-leave-checkbox" checked disabled />
+        Apply Leave (Student)
+      </h2>
+      <form id="apply-leave-form">
+        <div class="form-group">
+          <label for="roll-number">Roll Number:</label>
+          <select id="roll-number" name="rollNo" required>
+            <option value="">-- Select Roll Number --</option>
+            <!-- Roll Numbers will be populated by JS -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="leave-date">Date:</label>
+          <input type="date" id="leave-date" name="leaveDate" required />
+        </div>
+        <div class="form-group">
+          <label for="time-duration">Time Duration:</label>
+          <select id="time-duration" name="timeDuration" required>
+            <option value="Full Day">Full Day</option>
+            <option value="Half Day (Morning)">Half Day (Morning)</option>
+            <option value="Half Day (Afternoon)">Half Day (Afternoon)</option>
+          </select>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="submit-button">Submit</button>
+          <button
+            type="button"
+            class="cancel-button"
+            onclick="window.location.href='../home/home.html'"
+            id="cancel-button"
+          >
+            Cancel
+          </button>
+        </div>
+        <div id="message-display"></div>
+      </form>
+    </div>
+    <script src="./SLeave.js"></script>
+  </body>
+</html>

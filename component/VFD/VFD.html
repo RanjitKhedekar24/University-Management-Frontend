@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Management System</title>
+    <link rel="stylesheet" href="./VFD.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Teacher Details</h2>
+
+      <div class="search-section">
+        <label for="search-employee-id">Search by Employee ID</label>
+        <input
+          type="text"
+          id="search-employee-id"
+          placeholder="Enter Employee ID"
+        />
+        <select id="employee-id-select">
+          <option value="">-- Select ID --</option>
+          <!-- Employee IDs will be populated here by JS -->
+        </select>
+        <button id="search-btn" class="action-buttons search-btn">
+          Search
+        </button>
+      </div>
+
+      <div class="action-buttons">
+        <button id="print-btn" class="print-btn">Print</button>
+        <button
+          id="add-btn"
+          onclick="window.location.href='NFI.html'"
+          class="add-btn"
+        >
+          Add
+        </button>
+        <button id="update-btn" class="update-btn">Update</button>
+        <button
+          id="cancel-btn"
+          onclick="window.location.href='../home/home.html'"
+          class="cancel-btn"
+        >
+          Cancel
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table id="teacher-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Father's Name</th>
+              <th>Emp ID</th>
+              <th>DOB</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Class X (%)</th>
+              <th>Class XII (%)</th>
+              <th>Aadhar</th>
+              <th>Qualification</th>
+              <th>Department</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="message-display"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./VFD.js"></script>
+  </body>
+</html>

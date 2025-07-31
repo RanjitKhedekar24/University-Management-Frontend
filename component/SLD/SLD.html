@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Management System</title>
+    <link rel="stylesheet" href="./SLD.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Student Leave Details</h2>
+
+      <div class="search-section">
+        <label for="search-roll-number"
+          >Search Student Leave by Roll Number</label
+        >
+        <select id="roll-number-select">
+          <option value="">-- Select Roll Number --</option>
+          <!-- Roll Numbers will be populated here by JS -->
+        </select>
+        <button id="search-btn" class="action-buttons search-btn">
+          Search
+        </button>
+        <button id="print-btn" class="action-buttons print-btn">Print</button>
+        <button
+          id="cancel-btn"
+          onclick="window.location.href='../home/home.html'"
+          class="action-buttons cancel-btn"
+        >
+          Cancel
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table id="leave-details-table">
+          <thead>
+            <tr>
+              <th>Roll No.</th>
+              <th>Date</th>
+              <th>Duration</th>
+              <th>Application Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="message-display"></div>
+    </div>
+    <script src="./SLD.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+  </body>
+</html>
