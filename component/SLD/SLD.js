@@ -10,7 +10,7 @@
 // // Populate Roll Number dropdown from backend
 // const populateRollNumbers = async () => {
 //   try {
-//     const response = await fetch("http://localhost:3000/api/students");
+//     const response = await fetch("http://university-management-backend-e0sy.onrender.com/api/students");
 //     const students = await response.json();
 //     const rollNumberSelect = document.getElementById("roll-number-select");
 //     rollNumberSelect.innerHTML =
@@ -32,7 +32,7 @@
 // const fetchStudentLeaveRecords = async () => {
 //   try {
 //     const response = await fetch(
-//       "http://localhost:3000/api/student-leave-applications"
+//       "http://university-management-backend-e0sy.onrender.com/api/student-leave-applications"
 //     );
 //     allStudentLeaveData = await response.json();
 //     populateTable(allStudentLeaveData);
@@ -118,7 +118,6 @@
 //   await fetchStudentLeaveRecords();
 // })();
 
-
 // Function to display messages
 const displayMessage = (message, isError = false) => {
   const messageDisplay = document.getElementById("message-display");
@@ -131,7 +130,9 @@ let allStudentLeaveData = []; // Store all fetched student leave records
 // Populate Roll Number dropdown from backend
 const populateRollNumbers = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/students");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/students"
+    );
     const students = await response.json();
     const rollNumberSelect = document.getElementById("roll-number-select");
     rollNumberSelect.innerHTML =
@@ -153,7 +154,7 @@ const populateRollNumbers = async () => {
 const fetchStudentLeaveRecords = async () => {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/student-leave-applications"
+      "http://university-management-backend-e0sy.onrender.com/api/student-leave-applications"
     );
     allStudentLeaveData = await response.json();
     populateTable(allStudentLeaveData);
@@ -196,43 +197,43 @@ const populateTable = (records) => {
 function generateLeaveRecordsPDF(records, rollNumber = null) {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  
+
   // Add title
   doc.setFontSize(18);
-  const title = rollNumber 
+  const title = rollNumber
     ? `Leave Records for Roll Number: ${rollNumber}`
     : "All Student Leave Records";
-    
+
   doc.text(title, 105, 15, null, null, "center");
-  
+
   // Prepare data for table
-  const tableData = records.map(record => [
+  const tableData = records.map((record) => [
     record.rollNo || "",
-    record.leaveDate
-      ? new Date(record.leaveDate).toLocaleDateString()
-      : "",
+    record.leaveDate ? new Date(record.leaveDate).toLocaleDateString() : "",
     record.timeDuration || "",
     record.applicationDate
       ? new Date(record.applicationDate).toLocaleDateString()
       : "",
-    record.status || ""
+    record.status || "",
   ]);
-  
+
   // Create table
   doc.autoTable({
-    head: [["Roll Number", "Leave Date", "Duration", "Application Date", "Status"]],
+    head: [
+      ["Roll Number", "Leave Date", "Duration", "Application Date", "Status"],
+    ],
     body: tableData,
     startY: 25,
     theme: "grid",
     styles: { fontSize: 10 },
-    headStyles: { fillColor: [41, 128, 185] }
+    headStyles: { fillColor: [41, 128, 185] },
   });
-  
+
   // Save the PDF
-  const fileName = rollNumber 
-    ? `Leave_Records_${rollNumber}.pdf` 
+  const fileName = rollNumber
+    ? `Leave_Records_${rollNumber}.pdf`
     : "All_Student_Leave_Records.pdf";
-    
+
   doc.save(fileName);
 }
 
@@ -263,14 +264,15 @@ document.getElementById("search-btn").addEventListener("click", () => {
 });
 
 document.getElementById("print-btn").addEventListener("click", () => {
-  const selectedRollNumber = document.getElementById("roll-number-select").value;
-  
+  const selectedRollNumber =
+    document.getElementById("roll-number-select").value;
+
   if (selectedRollNumber) {
     // Generate PDF for selected roll number
     const filteredRecords = allStudentLeaveData.filter(
-      record => record.rollNo === selectedRollNumber
+      (record) => record.rollNo === selectedRollNumber
     );
-    
+
     if (filteredRecords.length > 0) {
       generateLeaveRecordsPDF(filteredRecords, selectedRollNumber);
     } else {

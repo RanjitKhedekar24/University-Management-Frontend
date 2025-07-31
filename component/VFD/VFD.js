@@ -10,7 +10,9 @@ let allTeachersData = [];
 // Fetch all teachers from backend
 const fetchTeachers = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/teachers");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/teachers"
+    );
     allTeachersData = await response.json();
     populateTable(allTeachersData);
     populateEmployeeIdDropdown(allTeachersData);
@@ -73,14 +75,14 @@ const populateEmployeeIdDropdown = (teachers) => {
 function generateTeacherPDF(teacher) {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  
+
   // Add title
   doc.setFontSize(18);
-  doc.text('Teacher Details', 105, 15, null, null, 'center');
-  
+  doc.text("Teacher Details", 105, 15, null, null, "center");
+
   // Reset font size
   doc.setFontSize(12);
-  
+
   // Add teacher details
   let y = 30;
   const details = [
@@ -91,25 +93,25 @@ function generateTeacherPDF(teacher) {
     `Address: ${teacher.address}`,
     `Phone: ${teacher.phone}`,
     `Email: ${teacher.email}`,
-    `Class X (%): ${teacher.classXPercent || ''}`,
-    `Class XII (%): ${teacher.classXIIPercent || ''}`,
+    `Class X (%): ${teacher.classXPercent || ""}`,
+    `Class XII (%): ${teacher.classXIIPercent || ""}`,
     `Aadhar Number: ${teacher.aadhar}`,
     `Qualification: ${teacher.qualification}`,
-    `Department: ${teacher.department}`
+    `Department: ${teacher.department}`,
   ];
-  
+
   details.forEach((line, index) => {
-    doc.text(line, 20, y + (index * 10));
+    doc.text(line, 20, y + index * 10);
   });
-  
+
   // Add university logo (if available)
   const img = new Image();
-  img.src = 'university-logo.png'; // Replace with actual path
-  img.onload = function() {
-    doc.addImage(img, 'PNG', 160, 10, 30, 30);
+  img.src = "university-logo.png"; // Replace with actual path
+  img.onload = function () {
+    doc.addImage(img, "PNG", 160, 10, 30, 30);
     doc.save(`Teacher_${teacher.employeeId}_Details.pdf`);
   };
-  
+
   // Save the PDF
   doc.save(`Teacher_${teacher.employeeId}_Details.pdf`);
 }
@@ -148,7 +150,7 @@ document.getElementById("search-btn").addEventListener("click", () => {
 document.getElementById("print-btn").addEventListener("click", () => {
   const tableBody = document.querySelector("#teacher-table tbody");
   const selectedRow = tableBody.querySelector("tr.selected");
-  
+
   if (selectedRow) {
     // Get teacher data from selected row
     const teacher = {
@@ -163,9 +165,9 @@ document.getElementById("print-btn").addEventListener("click", () => {
       classXIIPercent: selectedRow.cells[8].textContent,
       aadhar: selectedRow.cells[9].textContent,
       qualification: selectedRow.cells[10].textContent,
-      department: selectedRow.cells[11].textContent
+      department: selectedRow.cells[11].textContent,
     };
-    
+
     // Generate PDF
     generateTeacherPDF(teacher);
   } else {

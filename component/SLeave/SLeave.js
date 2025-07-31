@@ -8,7 +8,9 @@ const displayMessage = (message, isError = false) => {
 // Populate Roll Number dropdown from backend
 const populateRollNumbers = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/students");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/students"
+    );
     const students = await response.json();
     const rollNumberSelect = document.getElementById("roll-number");
     rollNumberSelect.innerHTML =
@@ -54,7 +56,7 @@ document
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/student-leave-applications",
+        "http://university-management-backend-e0sy.onrender.com/api/student-leave-applications",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

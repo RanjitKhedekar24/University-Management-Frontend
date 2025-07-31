@@ -30,7 +30,9 @@ const populateTable = (feeData) => {
 
 const fetchFeeStructure = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/fees");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/fees"
+    );
     const feeData = await response.json();
     populateTable(feeData);
     displayMessage("Fee structure loaded successfully.", false);

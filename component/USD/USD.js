@@ -82,7 +82,9 @@ const fetchStudentsForDropdown = async (preselectId = null) => {
     rollNumberSelect.innerHTML =
       '<option value="">Loading students...</option>';
 
-    const response = await fetch("http://localhost:3000/api/students");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/students"
+    );
 
     if (!response.ok) {
       const errorText = await response.text();
@@ -258,7 +260,7 @@ const initializePage = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:3000/api/students/${selectedStudentId}`,
+          `http://university-management-backend-e0sy.onrender.com/api/students/${selectedStudentId}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },

@@ -10,7 +10,9 @@ let studentNamesMap = new Map(); // Map rollNo to student name
 // Fetch student names and map them by roll number
 const fetchStudentNames = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/students");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/students"
+    );
     const students = await response.json();
     studentNamesMap.clear();
     students.forEach((student) => {
@@ -26,7 +28,9 @@ const fetchStudentNames = async () => {
 // Populate Roll Number dropdown from backend
 const populateRollNumbers = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/students");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/students"
+    );
     const students = await response.json();
     const rollNumberSelect = document.getElementById("roll-number-select");
     rollNumberSelect.innerHTML =
@@ -47,7 +51,9 @@ const populateRollNumbers = async () => {
 // Fetch student results from backend
 const fetchResults = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/results");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/results"
+    );
     allResultsData = await response.json();
     populateTable(allResultsData);
     displayMessage("Student results loaded successfully.", false);

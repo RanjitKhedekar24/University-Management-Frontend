@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("apply-leave-form");
   const messageDisplay = document.getElementById("message-display");
 
-  const API_BASE = "http://localhost:3000";
+  const API_BASE = "http://university-management-backend-e0sy.onrender.com";
 
   fetch(`${API_BASE}/api/teachers`)
     .then((res) => res.json())

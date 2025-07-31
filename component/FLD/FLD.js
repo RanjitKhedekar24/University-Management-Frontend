@@ -1,16 +1,16 @@
-
 const displayMessage = (message, isError = false) => {
   const messageDisplay = document.getElementById("message-display");
   messageDisplay.textContent = message;
   messageDisplay.style.color = isError ? "#f44336" : "#4CAF50";
 };
 
-let allLeaveRecordsData = []; 
-
+let allLeaveRecordsData = [];
 
 const populateEmployeeIds = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/teachers");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/teachers"
+    );
     const teachers = await response.json();
     const employeeIdSelect = document.getElementById("employee-id-select");
     employeeIdSelect.innerHTML =
@@ -30,7 +30,9 @@ const populateEmployeeIds = async () => {
 
 const fetchLeaveRecords = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/teachers/leave");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/teachers/leave"
+    );
     allLeaveRecordsData = await response.json();
     populateTable(allLeaveRecordsData);
     displayMessage("Teacher leave records loaded successfully.", false);
@@ -66,64 +68,66 @@ const populateTable = (records) => {
 };
 
 function generateLeaveRecordsPDF(records, employeeId = null) {
-  if (typeof window.jspdf === 'undefined') {
+  if (typeof window.jspdf === "undefined") {
     displayMessage("PDF library not loaded. Please try again later.", true);
     return;
   }
-  
+
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  
+
   doc.setFontSize(16);
   doc.setFont("helvetica", "bold");
-  
-  const title = employeeId 
+
+  const title = employeeId
     ? `Leave Records for Employee ID: ${employeeId}`
     : "All Teacher Leave Records";
-  
+
   const pageWidth = doc.internal.pageSize.getWidth();
-  const textWidth = doc.getStringUnitWidth(title) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+  const textWidth =
+    (doc.getStringUnitWidth(title) * doc.internal.getFontSize()) /
+    doc.internal.scaleFactor;
   const titleX = (pageWidth - textWidth) / 2;
-  
+
   doc.text(title, titleX, 15);
-  
-  const tableData = records.map(record => [
+
+  const tableData = records.map((record) => [
     record.employeeId || "",
-    record.leaveDate ? record.leaveDate.split('T')[0] : "",
+    record.leaveDate ? record.leaveDate.split("T")[0] : "",
     record.timeDuration || "",
-    record.applicationDate 
-      ? new Date(record.applicationDate).toLocaleDateString() 
+    record.applicationDate
+      ? new Date(record.applicationDate).toLocaleDateString()
       : "",
-    record.status || ""
+    record.status || "",
   ]);
-  
+
   doc.autoTable({
     startY: 25,
     head: [["Employee ID", "Date", "Duration", "Application Date", "Status"]],
     body: tableData,
-    theme: 'grid',
+    theme: "grid",
     headStyles: {
       fillColor: [41, 128, 185],
       textColor: [255, 255, 255],
-      fontStyle: 'bold'
+      fontStyle: "bold",
     },
     styles: {
       fontSize: 10,
-      cellPadding: 3
+      cellPadding: 3,
     },
     columnStyles: {
-      0: {cellWidth: 30},
-      1: {cellWidth: 25},
-      2: {cellWidth: 30},
-      3: {cellWidth: 35},
-      4: {cellWidth: 25}
-    }
+      0: { cellWidth: 30 },
+      1: { cellWidth: 25 },
+      2: { cellWidth: 30 },
+      3: { cellWidth: 35 },
+      4: { cellWidth: 25 },
+    },
   });
-  
-  const fileName = employeeId 
-    ? `Leave_Records_${employeeId}.pdf` 
+
+  const fileName = employeeId
+    ? `Leave_Records_${employeeId}.pdf`
     : "All_Leave_Records.pdf";
-    
+
   doc.save(fileName);
 }
 

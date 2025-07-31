@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
       "Electrical Engineering",
       "Mechanical Engineering",
       "Civil Engineering",
-      "Electronics Engineering"
+      "Electronics Engineering",
     ],
     "M.Tech": [
       "Computer Science",
       "Electrical Engineering",
       "Mechanical Engineering",
       "Civil Engineering",
-      "Electronics Engineering"
+      "Electronics Engineering",
     ],
     "Ph.D.": [
       "Physics",
@@ -48,9 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
       "Educational Psychology",
       "Curriculum Studies",
     ],
-    "M.A. (Education)": ["Education Theory", "Philosophy of Education", "Sociology of Education"],
-    "B.A. (Education)": ["Child Development", "Teaching Methods", "Language Teaching"],
-    "B.Sc. (Education)": ["Mathematics", "Physics", "Chemistry", "Biology"]
+    "M.A. (Education)": [
+      "Education Theory",
+      "Philosophy of Education",
+      "Sociology of Education",
+    ],
+    "B.A. (Education)": [
+      "Child Development",
+      "Teaching Methods",
+      "Language Teaching",
+    ],
+    "B.Sc. (Education)": ["Mathematics", "Physics", "Chemistry", "Biology"],
   };
 
   function showMessage(msg, type) {
@@ -66,11 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function populateQualificationOptions() {
-    qualificationSelect.innerHTML = '<option value="">-- Select Qualification --</option>';
-    
+    qualificationSelect.innerHTML =
+      '<option value="">-- Select Qualification --</option>';
+
     const allQualifications = Object.keys(subjectsByQualification).sort();
-    
-    allQualifications.forEach(qualification => {
+
+    allQualifications.forEach((qualification) => {
       const option = document.createElement("option");
       option.value = qualification;
       option.textContent = qualification;
@@ -80,11 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateDepartmentOptions() {
     const qualification = qualificationSelect.value;
-    departmentSelect.innerHTML = '<option value="">-- Select Department --</option>';
-    
+    departmentSelect.innerHTML =
+      '<option value="">-- Select Department --</option>';
+
     if (qualification && subjectsByQualification[qualification]) {
       departmentSelect.disabled = false;
-      subjectsByQualification[qualification].forEach(subject => {
+      subjectsByQualification[qualification].forEach((subject) => {
         const option = document.createElement("option");
         option.value = subject;
         option.textContent = subject;
@@ -97,7 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchNextEmployeeId() {
     try {
-      const res = await fetch("http://localhost:3000/api/teachers/next-employee");
+      const res = await fetch(
+        "http://university-management-backend-e0sy.onrender.com/api/teachers/next-employee"
+      );
       const data = await res.json();
       if (res.ok && data.nextEmployeeId) {
         empIdInput.value = data.nextEmployeeId;
@@ -113,9 +125,9 @@ document.addEventListener("DOMContentLoaded", () => {
     populateQualificationOptions();
     updateDepartmentOptions();
     fetchNextEmployeeId();
-    
+
     qualificationSelect.addEventListener("change", updateDepartmentOptions);
-    
+
     if (cancelBtn) {
       cancelBtn.addEventListener("click", () => {
         window.location.href = "../home/home.html";
@@ -126,10 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
-      
+
       const requiredFields = form.querySelectorAll("[required]");
       let valid = true;
-      
+
       requiredFields.forEach((field) => {
         if (!field.value.trim()) {
           field.classList.add("input-error");
@@ -138,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
           field.classList.remove("input-error");
         }
       });
-      
+
       if (departmentSelect.disabled || !departmentSelect.value) {
         departmentSelect.classList.add("input-error");
         valid = false;
@@ -149,49 +161,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!valid) return;
 
-  
       const formData = {};
-      const formElements = Array.from(form.elements).filter(el => el.name);
-      
+      const formElements = Array.from(form.elements).filter((el) => el.name);
+
       formElements.forEach((field) => {
         let key = field.name;
         formData[key] = field.value.trim();
       });
-      
+
       formData.employeeId = empIdInput.value;
-      
-      if (formData.classXPercent) formData.classXPercent = parseFloat(formData.classXPercent);
-      if (formData.classXIIPercent) formData.classXIIPercent = parseFloat(formData.classXIIPercent);
+
+      if (formData.classXPercent)
+        formData.classXPercent = parseFloat(formData.classXPercent);
+      if (formData.classXIIPercent)
+        formData.classXIIPercent = parseFloat(formData.classXIIPercent);
 
       try {
-        const response = await fetch("http://localhost:3000/api/teachers", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
-        
+        const response = await fetch(
+          "http://university-management-backend-e0sy.onrender.com/api/teachers",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          }
+        );
+
         const result = await response.json();
-        
+
         if (response.ok) {
-          showMessage(result.message + (result.employeeId ? `\nEmployee ID: ${result.employeeId}` : ""), "success");
+          showMessage(
+            result.message +
+              (result.employeeId ? `\nEmployee ID: ${result.employeeId}` : ""),
+            "success"
+          );
           form.reset();
           updateDepartmentOptions();
           await fetchNextEmployeeId();
         } else {
-          if ((result.error && result.error.code === 11000) || (result.message && result.message.toLowerCase().includes("duplicate"))) {
+          if (
+            (result.error && result.error.code === 11000) ||
+            (result.message &&
+              result.message.toLowerCase().includes("duplicate"))
+          ) {
             if (result.error && result.error.field === "email") {
-              showMessage("This email is already registered. Please use a different email.", "error");
+              showMessage(
+                "This email is already registered. Please use a different email.",
+                "error"
+              );
             } else if (result.error && result.error.field === "aadhar") {
-              showMessage("This Aadhar number is already registered. Please use a different Aadhar.", "error");
+              showMessage(
+                "This Aadhar number is already registered. Please use a different Aadhar.",
+                "error"
+              );
             } else {
-              showMessage("Duplicate entry. Email or Aadhar already exists.", "error");
+              showMessage(
+                "Duplicate entry. Email or Aadhar already exists.",
+                "error"
+              );
             }
           } else {
             showMessage(result.message || "Submission failed", "error");
           }
         }
       } catch (error) {
-        showMessage("Error submitting teacher details. Please try again.", "error");
+        showMessage(
+          "Error submitting teacher details. Please try again.",
+          "error"
+        );
       }
     });
   }

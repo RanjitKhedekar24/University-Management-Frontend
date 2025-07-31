@@ -1,4 +1,4 @@
-post:--http://localhost:3000/api/fees
+post:--http://university-management-backend-e0sy.onrender.com/api/fees
 
 
 [

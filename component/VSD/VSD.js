@@ -10,7 +10,7 @@
 // // Fetch all students from backend
 // const fetchStudents = async () => {
 //   try {
-//     const response = await fetch("http://localhost:3000/api/students");
+//     const response = await fetch("http://university-management-backend-e0sy.onrender.com/api/students");
 //     allStudentsData = await response.json();
 //     populateTable(allStudentsData);
 //     populateRollNumberDropdown(allStudentsData);
@@ -160,7 +160,9 @@ let allStudentsData = [];
 // Fetch all students from backend
 const fetchStudents = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/students");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/students"
+    );
     allStudentsData = await response.json();
     populateTable(allStudentsData);
     populateRollNumberDropdown(allStudentsData);
@@ -221,14 +223,14 @@ const populateRollNumberDropdown = (students) => {
 function generateStudentPDF(student) {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  
+
   // Add title
   doc.setFontSize(18);
-  doc.text('Student Details', 105, 15, null, null, 'center');
-  
+  doc.text("Student Details", 105, 15, null, null, "center");
+
   // Reset font size
   doc.setFontSize(12);
-  
+
   // Add student details
   let y = 30;
   const details = [
@@ -239,17 +241,17 @@ function generateStudentPDF(student) {
     `Address: ${student.address}`,
     `Phone: ${student.phone}`,
     `Email: ${student.email}`,
-    `Class X (%): ${student.classXPercent || ''}`,
-    `Class XII (%): ${student.classXIIPercent || ''}`,
+    `Class X (%): ${student.classXPercent || ""}`,
+    `Class XII (%): ${student.classXIIPercent || ""}`,
     `Aadhar Number: ${student.aadhar}`,
     `Course: ${student.course}`,
-    `Branch: ${student.branch}`
+    `Branch: ${student.branch}`,
   ];
-  
+
   details.forEach((line, index) => {
-    doc.text(line, 20, y + (index * 10));
+    doc.text(line, 20, y + index * 10);
   });
-  
+
   // Save the PDF
   doc.save(`Student_${student.rollNo}_Details.pdf`);
 }
@@ -288,7 +290,7 @@ document.getElementById("search-btn").addEventListener("click", () => {
 document.getElementById("print-btn").addEventListener("click", () => {
   const tableBody = document.querySelector("#student-table tbody");
   const selectedRow = tableBody.querySelector("tr.selected");
-  
+
   if (selectedRow) {
     // Get student data from selected row
     const student = {
@@ -303,9 +305,9 @@ document.getElementById("print-btn").addEventListener("click", () => {
       classXIIPercent: selectedRow.cells[8].textContent,
       aadhar: selectedRow.cells[9].textContent,
       course: selectedRow.cells[10].textContent,
-      branch: selectedRow.cells[11].textContent
+      branch: selectedRow.cells[11].textContent,
     };
-    
+
     // Generate PDF
     generateStudentPDF(student);
   } else {

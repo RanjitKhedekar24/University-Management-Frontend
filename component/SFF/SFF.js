@@ -3,7 +3,7 @@ const displayMessage = (message, isError = false) => {
   const messageDisplay = document.getElementById("message-display");
   messageDisplay.textContent = message;
   messageDisplay.style.color = isError ? "#f44336" : "#4CAF50";
-  
+
   // Add animation for payment success
   if (!isError) {
     messageDisplay.classList.add("payment-success");
@@ -16,16 +16,16 @@ const displayMessage = (message, isError = false) => {
 // Helper function to find matching dropdown option
 const findMatchingOption = (selectElement, value) => {
   if (!value) return null;
-  
+
   // Normalize both values for comparison
   const cleanValue = value.trim().toLowerCase();
   const options = Array.from(selectElement.options);
-  
+
   // Find matching option
-  const match = options.find(option => 
-    option.value.trim().toLowerCase() === cleanValue
+  const match = options.find(
+    (option) => option.value.trim().toLowerCase() === cleanValue
   );
-  
+
   return match ? match.value : null;
 };
 
@@ -36,28 +36,28 @@ const branchesByCourse = {
     "Electrical Engineering",
     "Mechanical Engineering",
     "Civil Engineering",
-    "Electronics Engineering"
+    "Electronics Engineering",
   ],
   "M.Tech": [
     "Computer Science",
     "Electrical Engineering",
     "Mechanical Engineering",
     "Civil Engineering",
-    "Electronics Engineering"
+    "Electronics Engineering",
   ],
   "B.Sc.": ["Physics", "Chemistry", "Computer Science"],
   "M.Sc.": ["Physics", "Chemistry", "Computer Science"],
   "B.A.": ["History", "Literature"],
-  "M.A.": ["History", "Literature"]
+  "M.A.": ["History", "Literature"],
 };
 
 // Function to populate branch dropdown
 const populateBranchDropdown = (course) => {
   const branchSelect = document.getElementById("branch");
   branchSelect.innerHTML = '<option value="">-- Select Branch --</option>';
-  
+
   if (course && branchesByCourse[course]) {
-    branchesByCourse[course].forEach(branch => {
+    branchesByCourse[course].forEach((branch) => {
       const option = document.createElement("option");
       option.value = branch;
       option.textContent = branch;
@@ -73,7 +73,9 @@ let feeStructureData = {}; // Cache fee structure data (course -> {semesterN: am
 const fetchStudentsForDropdown = async () => {
   const rollNumberSelect = document.getElementById("roll-number-select");
   try {
-    const response = await fetch("http://localhost:3000/api/students");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/students"
+    );
     const students = await response.json();
     allStudentsData = students;
     rollNumberSelect.innerHTML =
@@ -97,7 +99,9 @@ const fetchStudentsForDropdown = async () => {
 // Fetch fee structure data and build lookup
 const fetchFeeStructureData = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/fees");
+    const response = await fetch(
+      "http://university-management-backend-e0sy.onrender.com/api/fees"
+    );
     const fees = await response.json();
     // Build a lookup: feeStructureData[course][semesterN] = amount
     feeStructureData = {};
@@ -120,45 +124,57 @@ const fillStudentDetails = (rollNo) => {
   const selectedStudent = allStudentsData.find(
     (student) => student.rollNo === rollNo
   );
-  
+
   if (selectedStudent) {
     document.getElementById("student-name").textContent =
       selectedStudent.name || "";
     document.getElementById("father-name").textContent =
       selectedStudent.fatherName || "";
-    
+
     // Get dropdown elements
     const courseSelect = document.getElementById("course");
     const branchSelect = document.getElementById("branch");
-    
+
     // Find matching course
-    const matchedCourse = findMatchingOption(courseSelect, selectedStudent.course);
+    const matchedCourse = findMatchingOption(
+      courseSelect,
+      selectedStudent.course
+    );
     courseSelect.value = matchedCourse || "";
-    
+
     // Populate branches based on course
     populateBranchDropdown(matchedCourse);
-    
+
     // Find matching branch
-    const matchedBranch = findMatchingOption(branchSelect, selectedStudent.branch);
+    const matchedBranch = findMatchingOption(
+      branchSelect,
+      selectedStudent.branch
+    );
     branchSelect.value = matchedBranch || "";
 
     // Reset semester and fee
     document.getElementById("semester").value = "";
     document.getElementById("total-payable").textContent = "0";
-    
+
     // Calculate fee if semester already selected
     const semester = document.getElementById("semester").value;
     if (semester) {
       calculateTotalPayable();
     }
-    
+
     // Show warnings if no match found
     if (selectedStudent.course && !matchedCourse) {
-      displayMessage(`Course "${selectedStudent.course}" not found in options`, true);
+      displayMessage(
+        `Course "${selectedStudent.course}" not found in options`,
+        true
+      );
     }
-    
+
     if (selectedStudent.branch && !matchedBranch) {
-      displayMessage(`Branch "${selectedStudent.branch}" not found in options`, true);
+      displayMessage(
+        `Branch "${selectedStudent.branch}" not found in options`,
+        true
+      );
     }
   } else {
     // Clear fields if student not found
@@ -216,12 +232,10 @@ document
   });
 
 // AUTOMATICALLY CALCULATE FEE WHEN COURSE OR SEMESTER CHANGES
-document
-  .getElementById("course")
-  .addEventListener("change", function() {
-    populateBranchDropdown(this.value);
-    calculateTotalPayable();
-  });
+document.getElementById("course").addEventListener("change", function () {
+  populateBranchDropdown(this.value);
+  calculateTotalPayable();
+});
 document
   .getElementById("semester")
   .addEventListener("change", calculateTotalPayable);
@@ -268,19 +282,22 @@ document
     };
 
     try {
-      const response = await fetch("http://localhost:3000/api/student-fees", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(paymentData),
-      });
+      const response = await fetch(
+        "http://university-management-backend-e0sy.onrender.com/api/student-fees",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(paymentData),
+        }
+      );
       const result = await response.json();
       if (response.ok) {
         displayMessage("✅ Fee payment recorded successfully!", false);
-        
+
         // Add success animation to the message
         const messageDisplay = document.getElementById("message-display");
         messageDisplay.classList.add("payment-success");
-        
+
         setTimeout(() => {
           document.getElementById("fee-payment-form").reset();
           document.getElementById("student-name").textContent = "";
@@ -289,7 +306,7 @@ document
           populateBranchDropdown("");
           messageDisplay.classList.remove("payment-success");
         }, 3000);
-        
+
         fetchStudentsForDropdown();
       } else {
         displayMessage(
@@ -310,10 +327,13 @@ document.getElementById("back-button").addEventListener("click", () => {
 (async () => {
   await fetchStudentsForDropdown();
   await fetchFeeStructureData();
-  
+
   // Initialize branch dropdown with current course value
   const initialCourse = document.getElementById("course").value;
   populateBranchDropdown(initialCourse);
-  
-  displayMessage("Fee data loaded successfully. Select a student to begin.", false);
+
+  displayMessage(
+    "Fee data loaded successfully. Select a student to begin.",
+    false
+  );
 })();
