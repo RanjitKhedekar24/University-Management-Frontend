@@ -9,7 +9,7 @@ const displayMessage = (message, isError = false) => {
 const populateRollNumbers = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/students"
+      "https://university-management-backend-e0sy.onrender.com/api/students"
     );
     const students = await response.json();
     const rollNumberSelect = document.getElementById("roll-number");
@@ -56,7 +56,7 @@ document
 
     try {
       const response = await fetch(
-        "http://university-management-backend-e0sy.onrender.com/api/student-leave-applications",
+        "https://university-management-backend-e0sy.onrender.com/api/student-leave-applications",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -34,7 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function fetchStudents() {
-    fetch("http://university-management-backend-e0sy.onrender.com/api/students")
+    fetch(
+      "https://university-management-backend-e0sy.onrender.com/api/students"
+    )
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch students");
         return response.json();
@@ -212,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        "http://university-management-backend-e0sy.onrender.com/api/results",
+        "https://university-management-backend-e0sy.onrender.com/api/results",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

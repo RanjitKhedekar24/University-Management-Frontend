@@ -10,7 +10,7 @@
 // // Fetch all students from backend
 // const fetchStudents = async () => {
 //   try {
-//     const response = await fetch("http://university-management-backend-e0sy.onrender.com/api/students");
+//     const response = await fetch("https://university-management-backend-e0sy.onrender.com/api/students");
 //     allStudentsData = await response.json();
 //     populateTable(allStudentsData);
 //     populateRollNumberDropdown(allStudentsData);
@@ -161,7 +161,7 @@ let allStudentsData = [];
 const fetchStudents = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/students"
+      "https://university-management-backend-e0sy.onrender.com/api/students"
     );
     allStudentsData = await response.json();
     populateTable(allStudentsData);

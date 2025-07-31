@@ -31,7 +31,7 @@ const populateTable = (feeData) => {
 const fetchFeeStructure = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/fees"
+      "https://university-management-backend-e0sy.onrender.com/api/fees"
     );
     const feeData = await response.json();
     populateTable(feeData);

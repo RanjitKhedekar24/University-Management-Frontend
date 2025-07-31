@@ -11,7 +11,7 @@ let studentNamesMap = new Map(); // Map rollNo to student name
 const fetchStudentNames = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/students"
+      "https://university-management-backend-e0sy.onrender.com/api/students"
     );
     const students = await response.json();
     studentNamesMap.clear();
@@ -29,7 +29,7 @@ const fetchStudentNames = async () => {
 const populateRollNumbers = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/students"
+      "https://university-management-backend-e0sy.onrender.com/api/students"
     );
     const students = await response.json();
     const rollNumberSelect = document.getElementById("roll-number-select");
@@ -52,7 +52,7 @@ const populateRollNumbers = async () => {
 const fetchResults = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/results"
+      "https://university-management-backend-e0sy.onrender.com/api/results"
     );
     allResultsData = await response.json();
     populateTable(allResultsData);

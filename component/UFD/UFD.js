@@ -119,7 +119,7 @@ const fetchTeachersForDropdown = async (preselectId = null) => {
       '<option value="">Loading teachers...</option>';
 
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/teachers"
+      "https://university-management-backend-e0sy.onrender.com/api/teachers"
     );
 
     if (!response.ok) {
@@ -296,7 +296,7 @@ const initializePage = () => {
 
       try {
         const response = await fetch(
-          `http://university-management-backend-e0sy.onrender.com/api/teachers/${selectedTeacherId}`,
+          `https://university-management-backend-e0sy.onrender.com/api/teachers/${selectedTeacherId}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },

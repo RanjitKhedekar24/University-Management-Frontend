@@ -11,7 +11,7 @@ let allTeachersData = [];
 const fetchTeachers = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/teachers"
+      "https://university-management-backend-e0sy.onrender.com/api/teachers"
     );
     allTeachersData = await response.json();
     populateTable(allTeachersData);

@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchNextEmployeeId() {
     try {
       const res = await fetch(
-        "http://university-management-backend-e0sy.onrender.com/api/teachers/next-employee"
+        "https://university-management-backend-e0sy.onrender.com/api/teachers/next-employee"
       );
       const data = await res.json();
       if (res.ok && data.nextEmployeeId) {
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const response = await fetch(
-          "http://university-management-backend-e0sy.onrender.com/api/teachers",
+          "https://university-management-backend-e0sy.onrender.com/api/teachers",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

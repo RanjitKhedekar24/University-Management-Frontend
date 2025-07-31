@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const response = await fetch(
-          "http://university-management-backend-e0sy.onrender.com/api/students",
+          "https://university-management-backend-e0sy.onrender.com/api/students",
           {
             method: "POST",
             headers: {

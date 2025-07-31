@@ -9,7 +9,7 @@ let allLeaveRecordsData = [];
 const populateEmployeeIds = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/teachers"
+      "https://university-management-backend-e0sy.onrender.com/api/teachers"
     );
     const teachers = await response.json();
     const employeeIdSelect = document.getElementById("employee-id-select");
@@ -31,7 +31,7 @@ const populateEmployeeIds = async () => {
 const fetchLeaveRecords = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/teachers/leave"
+      "https://university-management-backend-e0sy.onrender.com/api/teachers/leave"
     );
     allLeaveRecordsData = await response.json();
     populateTable(allLeaveRecordsData);

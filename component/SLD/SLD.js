@@ -10,7 +10,7 @@
 // // Populate Roll Number dropdown from backend
 // const populateRollNumbers = async () => {
 //   try {
-//     const response = await fetch("http://university-management-backend-e0sy.onrender.com/api/students");
+//     const response = await fetch("https://university-management-backend-e0sy.onrender.com/api/students");
 //     const students = await response.json();
 //     const rollNumberSelect = document.getElementById("roll-number-select");
 //     rollNumberSelect.innerHTML =
@@ -32,7 +32,7 @@
 // const fetchStudentLeaveRecords = async () => {
 //   try {
 //     const response = await fetch(
-//       "http://university-management-backend-e0sy.onrender.com/api/student-leave-applications"
+//       "https://university-management-backend-e0sy.onrender.com/api/student-leave-applications"
 //     );
 //     allStudentLeaveData = await response.json();
 //     populateTable(allStudentLeaveData);
@@ -131,7 +131,7 @@ let allStudentLeaveData = []; // Store all fetched student leave records
 const populateRollNumbers = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/students"
+      "https://university-management-backend-e0sy.onrender.com/api/students"
     );
     const students = await response.json();
     const rollNumberSelect = document.getElementById("roll-number-select");
@@ -154,7 +154,7 @@ const populateRollNumbers = async () => {
 const fetchStudentLeaveRecords = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/student-leave-applications"
+      "https://university-management-backend-e0sy.onrender.com/api/student-leave-applications"
     );
     allStudentLeaveData = await response.json();
     populateTable(allStudentLeaveData);

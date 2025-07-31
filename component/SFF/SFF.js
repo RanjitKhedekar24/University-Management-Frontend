@@ -74,7 +74,7 @@ const fetchStudentsForDropdown = async () => {
   const rollNumberSelect = document.getElementById("roll-number-select");
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/students"
+      "https://university-management-backend-e0sy.onrender.com/api/students"
     );
     const students = await response.json();
     allStudentsData = students;
@@ -100,7 +100,7 @@ const fetchStudentsForDropdown = async () => {
 const fetchFeeStructureData = async () => {
   try {
     const response = await fetch(
-      "http://university-management-backend-e0sy.onrender.com/api/fees"
+      "https://university-management-backend-e0sy.onrender.com/api/fees"
     );
     const fees = await response.json();
     // Build a lookup: feeStructureData[course][semesterN] = amount
@@ -283,7 +283,7 @@ document
 
     try {
       const response = await fetch(
-        "http://university-management-backend-e0sy.onrender.com/api/student-fees",
+        "https://university-management-backend-e0sy.onrender.com/api/student-fees",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
